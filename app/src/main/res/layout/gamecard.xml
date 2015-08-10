@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/dark_background">
+
+
+    <ImageView
+        android:id="@+id/homeTeamImage"
+        android:layout_width="@dimen/cell_image_dimension"
+        android:layout_height="@dimen/cell_image_dimension"
+        android:src="@drawable/atlantahawks"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_alignParentLeft="true"
+        />
+
+    <ImageView
+        android:id="@+id/awayTeamImage"
+        android:layout_width="@dimen/cell_image_dimension"
+        android:layout_height="@dimen/cell_image_dimension"
+        android:src="@drawable/dallasmavericks"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_alignParentRight="true"
+        />
+
+</RelativeLayout>
