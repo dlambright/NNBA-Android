@@ -1,7 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
     android:background="@color/dark_background">
+
+    <View
+        android:id="@+id/homeTeamColorView"
+        android:layout_width="match_parent"
+        android:layout_marginRight="176dp"
+        android:layout_height="140dp"
+        android:background="#ff00ff"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="#00ff00"
+        android:layout_marginLeft="176dp"
+        android:layout_gravity="right"
+        />
+
+    <!--android:layout_alignTop="@+id/homeTeamImage"-->
+    <!--android:layout_alignBottom="@+id/homeTeamImage"-->
+
+
+    <View
+        android:id="@+id/awayTeamScoreBackgroundView"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/score_height"
+        android:background="@drawable/view_modifiers"
+        android:layout_alignBottom="@+id/awayTeamImage"
+        android:layout_alignLeft="@+id/homeTeamScore"
+        android:layout_alignRight="@+id/awayTeamImage"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="@dimen/cell_image_padding"
+
+
+        />
+    <View
+        android:id="@+id/homeTeamScoreBackgroundView"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/score_height"
+        android:background="@drawable/view_modifiers"
+        android:layout_alignLeft="@+id/homeTeamImage"
+        android:layout_alignRight="@+id/awayTeamImage"
+        android:layout_marginRight="140dp"
+        android:layout_marginTop="@dimen/cell_image_padding"
+        />
+    <!--android:layout_toRightOf="@+id/homeTeamImage"-->
+    <!--android:layout_alignLeft="@+id/homeTeamImage"-->
+    <!--android:layout_alignRight="@+id/awayTeamImage"-->
 
 
     <ImageView
@@ -11,7 +61,9 @@
         android:src="@drawable/atlantahawks"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
         android:layout_alignParentLeft="true"
+        android:background="@drawable/view_modifiers"
         />
 
     <ImageView
@@ -19,9 +71,44 @@
         android:layout_width="@dimen/cell_image_dimension"
         android:layout_height="@dimen/cell_image_dimension"
         android:src="@drawable/dallasmavericks"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="@dimen/cell_image_padding"
+        android:layout_marginBottom="@dimen/cell_image_padding"
+        android:layout_marginRight="16dp"
         android:layout_alignParentRight="true"
+        android:background="@drawable/view_modifiers"
         />
+
+    <TextView
+        android:id="@+id/homeTeamScore"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/score_height"
+        android:text="100"
+        android:textColor="@color/black"
+        android:layout_alignTop="@+id/homeTeamImage"
+        android:layout_alignLeft="@+id/homeTeamImage"
+        android:layout_alignRight="@+id/homeTeamScoreBackgroundView"
+        android:background="@drawable/view_modifiers"
+        android:textStyle="bold|italic"
+        android:textSize="16dp"
+        android:layout_marginLeft="120dp"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/awayTeamScore"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/score_height"
+        android:text="100"
+        android:textColor="@color/black"
+        android:layout_alignBottom="@+id/awayTeamImage"
+        android:layout_alignLeft="@+id/awayTeamScoreBackgroundView"
+        android:layout_toLeftOf="@id/awayTeamImage"
+        android:background="@drawable/view_modifiers"
+        android:gravity="center"
+        android:textStyle="bold|italic"
+        android:textSize="16dp"/>
+
+
+
 
 </RelativeLayout>

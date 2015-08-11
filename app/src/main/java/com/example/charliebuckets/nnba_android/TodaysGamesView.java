@@ -26,7 +26,7 @@ public class TodaysGamesView extends AppCompatActivity {
                 "torontoraptors", "utahjazz", "washingtonwizards"};
 
         ArrayList<Game> todaysGames = new ArrayList<Game>();
-        for (int i = 0; i < 15; i ++){
+        for (int i = 0; i < teamList.length/2; i ++){
 
             int homeId = getDrawableFromString(teamList[i*2]);//getResources().getIdentifier("res/drawable/" + teamList[i*2], null, null);
             int awayId = getDrawableFromString(teamList[(i*2)+1]);//getResources().getIdentifier("res/drawable/" + teamList[i*2]+1, null, null);
