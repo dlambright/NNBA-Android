@@ -21,11 +21,8 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.CellViewHolder> {
 
     @Override
     public CellViewHolder onCreateViewHolder(ViewGroup parent, int i) {
-
         // create a new view
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.gamecard, parent, false);
-
-        //set the view's layout paddings, margins blah blah blah
 
         return new CellViewHolder(v);
     }
@@ -34,13 +31,13 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.CellViewHolder> {
     public void onBindViewHolder(CellViewHolder cellViewHolder, int i) {
         Game tempGame = gameDataSet.get(i);
 
-//        int id = getResources().getIdentifier("yourpackagename:drawable/" + StringGenerated, null, null);
-
-
 
         cellViewHolder.homeTeam.setImageResource(tempGame.homeTeamId);
-
         cellViewHolder.awayTeam.setImageResource(tempGame.awayTeamId);
+
+        cellViewHolder.homeTeamColorView.setColor(Constants.getHomeTeamColor(tempGame.homeTeam, tempGame.awayTeam));
+        cellViewHolder.awayTeamColorView.setColor(Constants.getAwayTeamColor(tempGame.homeTeam, tempGame.awayTeam));
+
 
     }
 
@@ -55,14 +52,16 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.CellViewHolder> {
     public static class CellViewHolder extends RecyclerView.ViewHolder {
         public ImageView homeTeam;
         public ImageView awayTeam;
+        public HomeTeamBackground homeTeamColorView;
+        public AwayTeamBackground awayTeamColorView;
 
         public CellViewHolder(View itemView) {
             super(itemView);
 
             homeTeam = (ImageView)itemView.findViewById(R.id.homeTeamImage);
             awayTeam = (ImageView)itemView.findViewById(R.id.awayTeamImage);
-
-
+            homeTeamColorView = (HomeTeamBackground)itemView.findViewById(R.id.homeTeamColorView);
+            awayTeamColorView = (AwayTeamBackground)itemView.findViewById(R.id.awayTeamColorView);
         }
     }
 }
