@@ -16,6 +16,10 @@ public class HomeTeamBackground extends View {
     int color;
     private Paint paint;
     String homeTeamName;
+    private Path path;
+    private int bottomCanvasWidth;
+    private int canvasWidth;
+    private int canvasHeight;
 
 
 
@@ -45,24 +49,25 @@ public class HomeTeamBackground extends View {
         color = Color.GREEN;
         paint = new Paint();
         paint.setColor(color);
-//        paint.setAlpha(5);
+
+        paint.setStyle(Paint.Style.FILL_AND_STROKE);
     }
 
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        paint.setStyle(Paint.Style.FILL_AND_STROKE);
-        Path path = new Path();
+
+        bottomCanvasWidth = (int) (canvas.getWidth()*(.55f));
+        canvasWidth = canvas.getWidth();
+        canvasHeight = canvas.getHeight();
+
+        path = new Path();
         path.moveTo(0,0);
-        path.lineTo(canvas.getWidth(), 0);
-        path.lineTo(canvas.getWidth()-(canvas.getWidth()-110), canvas.getHeight());
-        path.lineTo(0,canvas.getHeight());
+        path.lineTo(canvasWidth, 0);
+        path.lineTo(bottomCanvasWidth, canvasHeight);
+        path.lineTo(0,canvasHeight);
         path.lineTo(0,0);
-
-        canvas.drawPath(path,paint);
-
-
-
+        canvas.drawPath(path, paint);
     }
 }

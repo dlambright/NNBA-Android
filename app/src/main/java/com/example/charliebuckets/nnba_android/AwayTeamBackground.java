@@ -16,6 +16,10 @@ public class AwayTeamBackground extends View {
     private Paint paint;
     String awayTeamName;
 
+    int topCanvasWidth;
+    int canvasWidth;
+    int canvasHeight;
+    Path path;
 
 
     public AwayTeamBackground(Context context) {
@@ -44,24 +48,25 @@ public class AwayTeamBackground extends View {
         //paint.setAlpha(50);
         paint = new Paint();
         paint.setColor(color);
+        paint.setStyle(Paint.Style.FILL_AND_STROKE);
+        path = new Path();
     }
 
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        paint.setStyle(Paint.Style.FILL_AND_STROKE);
-        Path path = new Path();
-        path.moveTo(0, canvas.getHeight());
-        path.lineTo(canvas.getWidth()-110, 0);
-        path.lineTo(canvas.getWidth(), 0);
-        path.lineTo(canvas.getWidth(),canvas.getHeight());
-        path.lineTo(0,canvas.getHeight());
+        topCanvasWidth = (int) (canvas.getWidth()*(.45f));
+        canvasWidth = canvas.getWidth();
+        canvasHeight = canvas.getHeight();
 
-        canvas.drawPath(path,paint);
+        path.moveTo(0,canvasHeight);
+        path.lineTo(topCanvasWidth, 0);
+        path.lineTo(canvasWidth, 0);
+        path.lineTo(canvasWidth,canvasHeight);
+        path.lineTo(0,canvasHeight);
 
-
-
+        canvas.drawPath(path, paint);
     }
 }
 

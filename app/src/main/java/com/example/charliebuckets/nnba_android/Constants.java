@@ -105,12 +105,15 @@ public class Constants {
                     put("washingtonwizards", Color.rgb(227, 24, 55));
                 }});
 
-    public static int getHomeTeamColor(String homeTeam, String awayTeam){
+    public static int getHomeTeamColor(String homeTeam){
         return primaryColors.get(homeTeam);
    }
 
     public static int getAwayTeamColor(String homeTeam, String awayTeam){
-        if (primaryColors.get(homeTeam) == primaryColors.get(awayTeam)){
+        int home = primaryColors.get(homeTeam);
+        int away = primaryColors.get(awayTeam);
+
+        if (home == away){
             return secondaryColors.get(awayTeam);
         }
         return primaryColors.get(awayTeam);
