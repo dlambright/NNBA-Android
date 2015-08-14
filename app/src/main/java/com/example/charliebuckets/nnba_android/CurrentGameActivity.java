@@ -1,10 +1,7 @@
 package com.example.charliebuckets.nnba_android;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
 public class CurrentGameActivity extends AppCompatActivity {
@@ -24,5 +21,8 @@ public class CurrentGameActivity extends AppCompatActivity {
 
         awayTeamImage = (ImageView)findViewById(R.id.awayTeamImage);
         awayTeamImage.setImageResource(Constants.getDrawableFromString(awayTeamString));
+
+
+
     }
 }

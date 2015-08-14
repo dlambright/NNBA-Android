@@ -46,7 +46,9 @@ public class Constants {
                 put("utahjazz", "Jazz");
                 put("washingtonwizards", "Wizards");
             }});
-
+    public static String getTeamNameFromFullName(String fullName){
+        return teamNameTable.get(fullName);
+    }
 
     public static final Map<String, Integer> primaryColors = Collections.unmodifiableMap(
             new HashMap<String, Integer>() {

@@ -14,6 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:text="100"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         />
     <TextView
         android:id="@+id/middleValue"
@@ -23,13 +25,18 @@
         android:layout_toLeftOf="@+id/awayTeamValue"
         android:text="Rebounds"
         android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         />
     <TextView
         android:id="@+id/awayTeamValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:text="100"/>
+        android:text="100"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        />
 
 
 </RelativeLayout>
