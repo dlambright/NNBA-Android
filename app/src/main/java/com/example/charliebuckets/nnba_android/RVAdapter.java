@@ -1,9 +1,10 @@
 package com.example.charliebuckets.nnba_android;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
-import android.util.LruCache;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +25,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.CellViewHolder> {
     private ArrayList<Game> gameDataSet;
     private Context context;
 
+
     public RVAdapter(ArrayList <Game> newGameList, Context c){
         context = c;
         this.gameDataSet = newGameList;
@@ -42,29 +44,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.CellViewHolder> {
         final Game tempGame = gameDataSet.get(i);
 
         // TODO: Find a way to clear context variable so the TodaysGames activity context isnt leaked
-        /**
-         *
-         *          .observeOn(AndroidSchedulers.mainThread())
-         *          .subscribeOn(Schedulers.io())
 
-        ImageUtility.getScaledImageObservableFromDrawable(context.getResources(), tempGame.homeTeamId,
-                ImageUtility.TEAM_LOGO_TODAYS_GAMES_WIDTH, ImageUtility.TEAM_LOGO_TODAYS_GAMES_HEIGHT)
-                .subscribe(new Action1<Bitmap>() {
-                    @Override
-                    public void call(Bitmap bitmap) {
-                        cellViewHolder.homeTeam.setImageBitmap(bitmap);
-                    }
-                });
-
-        ImageUtility.getScaledImageObservableFromDrawable(context.getResources(), tempGame.awayTeamId,
-                ImageUtility.TEAM_LOGO_TODAYS_GAMES_WIDTH, ImageUtility.TEAM_LOGO_TODAYS_GAMES_HEIGHT)
-                .subscribe(new Action1<Bitmap>() {
-                    @Override
-                    public void call(Bitmap bitmap) {
-                        cellViewHolder.awayTeam.setImageBitmap(bitmap);
-                    }
-                });
-        */
 
         ImageUtility.getTeamLogoObservable(context.getResources(),
                 tempGame.homeTeamId,
@@ -97,6 +77,10 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.CellViewHolder> {
 
         cellViewHolder.homeTeamColorView.setColor(Constants.getHomeTeamColor(tempGame.homeTeam));
         cellViewHolder.awayTeamColorView.setAlpha(.5f);
+
+        cellViewHolder.homeTeamName = tempGame.homeTeam;
+        cellViewHolder.awayTeamName = tempGame.awayTeam;
+
     }
 
     @Override
@@ -106,11 +90,18 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.CellViewHolder> {
 
 
 
+
+
     public static class CellViewHolder extends RecyclerView.ViewHolder {
         public ImageView homeTeam;
         public ImageView awayTeam;
+        public String homeTeamName;
+        public String awayTeamName;
         public HomeTeamBackground homeTeamColorView;
         public AwayTeamBackground awayTeamColorView;
+
+
+
 
         public CellViewHolder(View itemView) {
             super(itemView);
@@ -119,7 +110,20 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.CellViewHolder> {
             awayTeam = (ImageView)itemView.findViewById(R.id.awayTeamImage);
             homeTeamColorView = (HomeTeamBackground)itemView.findViewById(R.id.homeTeamColorView);
             awayTeamColorView = (AwayTeamBackground)itemView.findViewById(R.id.awayTeamColorView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(v.getContext(), CurrentGameActivity.class);
+                    i.putExtra("homeTeamName", homeTeamName);
+                    i.putExtra("awayTeamName", awayTeamName);
+                    v.getContext().startActivity(i);
+                }
+            });
+
         }
+
+
+
     }
 
 }

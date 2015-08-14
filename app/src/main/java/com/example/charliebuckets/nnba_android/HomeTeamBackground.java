@@ -13,7 +13,7 @@ import android.view.View;
  */
 public class HomeTeamBackground extends View {
 
-    int color;
+
     private Paint paint;
     String homeTeamName;
     private Path path;
@@ -40,15 +40,15 @@ public class HomeTeamBackground extends View {
 
     public void setColor(int colorValue){
         paint.setColor(colorValue);
-        //String hexValue = Integer.toHexString(colorValue);
-        //color = Color.parseColor(hexValue);// 0xff000000 - Integer.parseInt(hexValue,16);
     }
 
+    public String getColor(){
+        return Integer.toHexString(paint.getColor());
+
+    }
 
     private void init(){
-        color = Color.GREEN;
         paint = new Paint();
-        paint.setColor(color);
 
         paint.setStyle(Paint.Style.FILL_AND_STROKE);
     }

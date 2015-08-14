@@ -19,6 +19,12 @@
         <activity
             android:name=".CurrentGameActivity"
             android:label="@string/title_activity_current_game" >
+            <intent-filter>
+                <action android:name="com.example.charliebuckets.nnba_android.CurrentGameActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
         </activity>
     </application>
 

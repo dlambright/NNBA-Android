@@ -101,7 +101,7 @@ public class Constants {
                     put("philadelphia76ers", Color.rgb(0, 107, 182));
                     put("portlandtrailblazers", Color.rgb(186, 195, 201));
                     put("torontoraptors", Color.rgb(6, 25, 34));
-                    put("utahjazz", Color.rgb(249, 160, 27));
+                    put("utahjazz", Color.rgb(0, 71, 27));
                     put("washingtonwizards", Color.rgb(227, 24, 55));
                 }});
 
@@ -117,5 +117,103 @@ public class Constants {
             return secondaryColors.get(awayTeam);
         }
         return primaryColors.get(awayTeam);
+    }
+    public static int getDrawableFromString(String teamName){
+        switch (teamName){
+            case "atlantahawks":
+                return R.drawable.atlantahawks;
+
+            case "bostonceltics":
+                return R.drawable.bostonceltics;
+
+            case "brooklynnets":
+                return R.drawable.brooklynnets;
+
+            case "charlottehornets":
+                return R.drawable.charlottehornets;
+
+            case "chicagobulls":
+                return R.drawable.chicagobulls;
+
+            case "clevelandcavaliers":
+                return R.drawable.clevelandcavaliers;
+
+            case "dallasmavericks":
+                return R.drawable.dallasmavericks;
+
+            case "denvernuggets":
+                return R.drawable.denvernuggets;
+
+            case "detroitpistons":
+                return R.drawable.detroitpistons;
+
+            case "goldenstatewarriors":
+                return R.drawable.goldenstatewarriors;
+
+            case "houstonrockets":
+                return R.drawable.houstonrockets;
+
+            case "indianapacers":
+                return R.drawable.indianapacers;
+
+            case "losangelesclippers":
+                return R.drawable.losangelesclippers;
+
+            case "losangeleslakers":
+                return R.drawable.losangeleslakers;
+
+            case "memphisgrizzlies":
+                return R.drawable.memphisgrizzlies;
+
+            case "miamiheat":
+                return R.drawable.miamiheat;
+
+            case "milwaukeebucks":
+                return R.drawable.milwaukeebucks;
+
+            case "minnesotatimberwolves":
+                return R.drawable.minnesotatimberwolves;
+
+            case "neworleanspelicans":
+                return R.drawable.neworleanspelicans;
+
+            case"newyorkknicks":
+                return R.drawable.newyorkknicks;
+
+            case "oklahomacitythunder":
+                return R.drawable.oklahomacitythunder;
+
+            case "orlandomagic":
+                return R.drawable.orlandomagic;
+
+            case "philadelphia76ers":
+                return R.drawable.philadelphia76ers;
+
+            case "phoenixsuns":
+                return R.drawable.phoenixsuns;
+
+            case "portlandtrailblazers":
+                return R.drawable.portlandtrailblazers;
+
+            case "sacramentokings":
+                return R.drawable.sacramentokings;
+
+            case "sanantoniospurs":
+                return R.drawable.sanantoniospurs;
+
+            case "torontoraptors":
+                return R.drawable.torontoraptors;
+
+            case "utahjazz":
+                return R.drawable.utahjazz;
+
+            case "washingtonwizards":
+                return R.drawable.washingtonwizards;
+
+            default:
+                return 200;
+
+        }
+
     }
 }

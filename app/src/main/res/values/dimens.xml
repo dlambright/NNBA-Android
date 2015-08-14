@@ -5,4 +5,6 @@
     <dimen name="cell_image_dimension">120dp</dimen>
     <dimen name="cell_image_padding">8dp</dimen>
     <dimen name="score_height">30dp</dimen>
+    <dimen name="statsholder_margin_vertical">4dp</dimen>
+    <dimen name="statsholder_margin_horizontal">8dp</dimen>
 </resources>
