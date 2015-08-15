@@ -22,7 +22,11 @@ public class CurrentGameActivity extends AppCompatActivity {
         awayTeamImage = (ImageView)findViewById(R.id.awayTeamImage);
         awayTeamImage.setImageResource(Constants.getDrawableFromString(awayTeamString));
 
+        initializeViews();
 
+    }
+
+    private void initializeViews(){
 
     }
 }

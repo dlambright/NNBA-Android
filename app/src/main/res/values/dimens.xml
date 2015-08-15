@@ -7,4 +7,6 @@
     <dimen name="score_height">30dp</dimen>
     <dimen name="statsholder_margin_vertical">4dp</dimen>
     <dimen name="statsholder_margin_horizontal">8dp</dimen>
+    <dimen name="statsholder_number_margin">16dp</dimen>
+    <dimen name="statsholder_label_margin">10dp</dimen>
 </resources>

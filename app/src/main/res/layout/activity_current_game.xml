@@ -1,7 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     tools:context="com.example.charliebuckets.nnba_android.CurrentGameActivity"
     android:background="@color/dark_background">
@@ -34,122 +35,435 @@
                 android:background="@drawable/view_modifiers"
                 android:layout_alignParentRight="true"
                 />
-            <include layout="@layout/statsholder"
-                android:id="@+id/statsHolderWinPct"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:layout_marginLeft="@dimen/statsholder_margin_horizontal"
-                android:layout_marginRight="@dimen/statsholder_margin_horizontal"
-                android:layout_marginBottom="@dimen/statsholder_margin_vertical"
-                android:layout_marginTop="@dimen/statsholder_margin_vertical"
+
+<!--Win Percnetage-->
+            <TextView
+                android:id="@+id/winPctMiddle"
                 android:layout_below="@+id/homeTeamImage"
-                />
-            <include layout="@layout/statsholder"
-                android:id="@+id/statsHolderScore"
-                android:layout_height="wrap_content"
+                android:text="WIN PROBABILITY"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:background="@drawable/view_modifiers"
                 android:layout_marginLeft="@dimen/statsholder_margin_horizontal"
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
-                android:layout_marginBottom="@dimen/statsholder_margin_vertical"
                 android:layout_marginTop="@dimen/statsholder_margin_vertical"
-                android:layout_below="@+id/statsHolderWinPct"
+                android:layout_marginBottom="@dimen/statsholder_margin_vertical"
+
+                />
+            <TextView
+                android:id="@+id/homeWinPct"
+                android:layout_below="@+id/homeTeamImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="95.1%"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/statsholder_number_margin"
+                android:layout_marginTop="10dp"
                 />
 
-            <include layout="@layout/statsholder"
-                android:id="@+id/statsHolderFieldGoals"
+            <TextView
+                android:id="@+id/awayWinPct"
+                android:layout_below="@+id/homeTeamImage"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="12.4%"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="@dimen/statsholder_number_margin"
+                />
+<!--Score-->
+            <TextView
+                android:id="@+id/scoreMiddle"
+                android:layout_below="@+id/winPctMiddle"
+                android:text="SCORE"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:background="@drawable/view_modifiers"
                 android:layout_marginLeft="@dimen/statsholder_margin_horizontal"
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
-                android:layout_marginBottom="@dimen/statsholder_margin_vertical"
                 android:layout_marginTop="@dimen/statsholder_margin_vertical"
-                android:layout_below="@+id/statsHolderScore"
+                android:layout_marginBottom="@dimen/statsholder_margin_vertical"
+                />
+            <TextView
+                android:id="@+id/homeScore"
+                android:layout_below="@+id/winPctMiddle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="100"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/statsholder_number_margin"
+                android:layout_marginTop="@dimen/statsholder_label_margin"
                 />
 
-            <include layout="@layout/statsholder"
-                android:id="@+id/statsHolder3ptFieldGoals"
+            <TextView
+                android:id="@+id/awayScore"
+                android:layout_below="@+id/winPctMiddle"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:layout_marginLeft="@dimen/statsholder_margin_horizontal"
-                android:layout_marginRight="@dimen/statsholder_margin_horizontal"
-                android:layout_marginBottom="@dimen/statsholder_margin_vertical"
-                android:layout_marginTop="@dimen/statsholder_margin_vertical"
-                android:layout_below="@+id/statsHolderFieldGoals"
+                android:layout_alignParentRight="true"
+                android:text="99"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/statsholder_label_margin"
+                android:layout_marginRight="@dimen/statsholder_number_margin"
                 />
 
-            <include layout="@layout/statsholder"
-                android:id="@+id/statsHolderFreeThrows"
-                android:layout_height="wrap_content"
+<!--Field Goals-->
+            <TextView
+                android:id="@+id/fieldGoalsMiddle"
+                android:layout_below="@+id/scoreMiddle"
+                android:text="FIELD GOALS"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:background="@drawable/view_modifiers"
                 android:layout_marginLeft="@dimen/statsholder_margin_horizontal"
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
-                android:layout_marginBottom="@dimen/statsholder_margin_vertical"
                 android:layout_marginTop="@dimen/statsholder_margin_vertical"
-                android:layout_below="@+id/statsHolder3ptFieldGoals"
+                android:layout_marginBottom="@dimen/statsholder_margin_vertical"
+                />
+            <TextView
+                android:id="@+id/homeFieldGoals"
+                android:layout_below="@+id/scoreMiddle"
+                android:text="13/25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/statsholder_number_margin"
+                android:layout_marginTop="@dimen/statsholder_label_margin"
                 />
 
-            <include layout="@layout/statsholder"
-                android:id="@+id/statsHolderRebounds"
+            <TextView
+                android:id="@+id/awayFieldGoals"
+                android:layout_below="@+id/scoreMiddle"
+                android:text="99/100"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:layout_marginLeft="@dimen/statsholder_margin_horizontal"
-                android:layout_marginRight="@dimen/statsholder_margin_horizontal"
-                android:layout_marginBottom="@dimen/statsholder_margin_vertical"
-                android:layout_marginTop="@dimen/statsholder_margin_vertical"
-                android:layout_below="@+id/statsHolderFreeThrows"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/statsholder_label_margin"
+                android:layout_marginRight="@dimen/statsholder_number_margin"
                 />
 
-            <include layout="@layout/statsholder"
-                android:id="@+id/statsHolderSteals"
-                android:layout_height="wrap_content"
+<!--3 Point Field Goals-->
+            <TextView
+                android:id="@+id/threePointMiddle"
+                android:layout_below="@+id/fieldGoalsMiddle"
+                android:text="3-PT FIELD GOALS"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:background="@drawable/view_modifiers"
                 android:layout_marginLeft="@dimen/statsholder_margin_horizontal"
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
-                android:layout_marginBottom="@dimen/statsholder_margin_vertical"
                 android:layout_marginTop="@dimen/statsholder_margin_vertical"
-                android:layout_below="@+id/statsHolderRebounds"
+                android:layout_marginBottom="@dimen/statsholder_margin_vertical"
+                />
+            <TextView
+                android:id="@+id/homeThreePointFieldGoals"
+                android:layout_below="@+id/fieldGoalsMiddle"
+                android:text="10/13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/statsholder_number_margin"
+                android:layout_marginTop="@dimen/statsholder_label_margin"
                 />
 
-            <include layout="@layout/statsholder"
-                android:id="@+id/statsHolderBlocks"
+            <TextView
+                android:id="@+id/awayFieldGoalsThreePointFieldGoals"
+                android:layout_below="@+id/fieldGoalsMiddle"
+                android:text="1/2"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:layout_marginLeft="@dimen/statsholder_margin_horizontal"
-                android:layout_marginRight="@dimen/statsholder_margin_horizontal"
-                android:layout_marginBottom="@dimen/statsholder_margin_vertical"
-                android:layout_marginTop="@dimen/statsholder_margin_vertical"
-                android:layout_below="@+id/statsHolderSteals"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/statsholder_label_margin"
+                android:layout_marginRight="@dimen/statsholder_number_margin"
                 />
 
-            <include layout="@layout/statsholder"
-                android:id="@+id/statsHolderAssists"
-                android:layout_height="wrap_content"
+<!--Free Throws-->
+            <TextView
+                android:id="@+id/freeThrowsMiddle"
+                android:layout_below="@+id/threePointMiddle"
+                android:text="FREE THROWS"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:background="@drawable/view_modifiers"
                 android:layout_marginLeft="@dimen/statsholder_margin_horizontal"
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
-                android:layout_marginBottom="@dimen/statsholder_margin_vertical"
                 android:layout_marginTop="@dimen/statsholder_margin_vertical"
-                android:layout_below="@+id/statsHolderBlocks"
+                android:layout_marginBottom="@dimen/statsholder_margin_vertical"
+                />
+            <TextView
+                android:id="@+id/homefreeThrows"
+                android:layout_below="@+id/threePointMiddle"
+                android:text="20/22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/statsholder_number_margin"
+                android:layout_marginTop="@dimen/statsholder_label_margin"
                 />
 
-            <include layout="@layout/statsholder"
-                android:id="@+id/statsHolderTSP"
+            <TextView
+                android:id="@+id/awayFreeTrows"
+                android:layout_below="@+id/threePointMiddle"
+                android:text="10/11"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/statsholder_label_margin"
+                android:layout_marginRight="@dimen/statsholder_number_margin"
+                />
+<!--Rebounds-->
+            <TextView
+                android:id="@+id/reboundsMiddle"
+                android:layout_below="@+id/freeThrowsMiddle"
+                android:text="REBOUNDS O/D/T"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:background="@drawable/view_modifiers"
                 android:layout_marginLeft="@dimen/statsholder_margin_horizontal"
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
-                android:layout_marginBottom="@dimen/statsholder_margin_vertical"
                 android:layout_marginTop="@dimen/statsholder_margin_vertical"
-                android:layout_below="@+id/statsHolderAssists"
+                android:layout_marginBottom="@dimen/statsholder_margin_vertical"
                 />
+            <TextView
+                android:id="@+id/homeRebounds"
+                android:layout_below="@+id/freeThrowsMiddle"
+                android:text="5/10/15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/statsholder_number_margin"
+                android:layout_marginTop="@dimen/statsholder_label_margin"
+                />
+
+            <TextView
+                android:id="@+id/awayRebounds"
+                android:layout_below="@+id/freeThrowsMiddle"
+                android:text="6/11/17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/statsholder_label_margin"
+                android:layout_marginRight="@dimen/statsholder_number_margin"
+                />
+
+<!--Steals-->
+            <TextView
+                android:id="@+id/stealsMiddle"
+                android:layout_below="@+id/reboundsMiddle"
+                android:text="STEALS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:background="@drawable/view_modifiers"
+                android:layout_marginLeft="@dimen/statsholder_margin_horizontal"
+                android:layout_marginRight="@dimen/statsholder_margin_horizontal"
+                android:layout_marginTop="@dimen/statsholder_margin_vertical"
+                android:layout_marginBottom="@dimen/statsholder_margin_vertical"
+                />
+            <TextView
+                android:id="@+id/homeSteals"
+                android:layout_below="@+id/reboundsMiddle"
+                android:text="5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/statsholder_number_margin"
+                android:layout_marginTop="@dimen/statsholder_label_margin"
+                />
+
+            <TextView
+                android:id="@+id/awaySteals"
+                android:layout_below="@+id/reboundsMiddle"
+                android:text="17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/statsholder_label_margin"
+                android:layout_marginRight="@dimen/statsholder_number_margin"
+                />
+
+<!--Steals-->
+            <TextView
+                android:id="@+id/blocksMiddle"
+                android:layout_below="@+id/stealsMiddle"
+                android:text="BLOCKS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:background="@drawable/view_modifiers"
+                android:layout_marginLeft="@dimen/statsholder_margin_horizontal"
+                android:layout_marginRight="@dimen/statsholder_margin_horizontal"
+                android:layout_marginTop="@dimen/statsholder_margin_vertical"
+                android:layout_marginBottom="@dimen/statsholder_margin_vertical"
+                />
+            <TextView
+                android:id="@+id/homeBlocks"
+                android:layout_below="@+id/stealsMiddle"
+                android:text="2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/statsholder_number_margin"
+                android:layout_marginTop="@dimen/statsholder_label_margin"
+                />
+
+            <TextView
+                android:id="@+id/awayBlocks"
+                android:layout_below="@+id/stealsMiddle"
+                android:text="4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/statsholder_label_margin"
+                android:layout_marginRight="@dimen/statsholder_number_margin"
+                />
+
+<!--Assists-->
+            <TextView
+                android:id="@+id/assistsMiddle"
+                android:layout_below="@+id/blocksMiddle"
+                android:text="ASSISTS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:background="@drawable/view_modifiers"
+                android:layout_marginLeft="@dimen/statsholder_margin_horizontal"
+                android:layout_marginRight="@dimen/statsholder_margin_horizontal"
+                android:layout_marginTop="@dimen/statsholder_margin_vertical"
+                android:layout_marginBottom="@dimen/statsholder_margin_vertical"
+                />
+            <TextView
+                android:id="@+id/homeAssists"
+                android:layout_below="@+id/blocksMiddle"
+                android:text="42"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/statsholder_number_margin"
+                android:layout_marginTop="@dimen/statsholder_label_margin"
+                />
+
+            <TextView
+                android:id="@+id/awayAssists"
+                android:layout_below="@+id/blocksMiddle"
+                android:text="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/statsholder_label_margin"
+                android:layout_marginRight="@dimen/statsholder_number_margin"
+                />
+
+<!--TSP-->
+            <TextView
+                android:id="@+id/tspMiddle"
+                android:layout_below="@+id/assistsMiddle"
+                android:text="TRUE SHOOTING %"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:background="@drawable/view_modifiers"
+                android:layout_marginLeft="@dimen/statsholder_margin_horizontal"
+                android:layout_marginRight="@dimen/statsholder_margin_horizontal"
+                android:layout_marginTop="@dimen/statsholder_margin_vertical"
+                android:layout_marginBottom="@dimen/statsholder_margin_vertical"
+                />
+            <TextView
+                android:id="@+id/homeTSP"
+                android:layout_below="@+id/assistsMiddle"
+                android:text="15.1%"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/statsholder_number_margin"
+                android:layout_marginTop="@dimen/statsholder_label_margin"
+                />
+
+            <TextView
+                android:id="@+id/awayTSP"
+                android:layout_below="@+id/assistsMiddle"
+                android:text="35.5%"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/statsholder_label_margin"
+                android:layout_marginRight="@dimen/statsholder_number_margin"
+                />
+
+<!-- GRAPH VIEW -->
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="200dp"
                 android:background="@drawable/view_modifiers"
-                android:layout_below="@+id/statsHolderTSP"
-                android:layout_marginTop="16dp"
-                />
+                android:layout_marginTop="@dimen/statsholder_label_margin"
+                android:layout_marginBottom="100dp"
+                android:layout_below="@+id/tspMiddle"/>
 
         </RelativeLayout>
 
