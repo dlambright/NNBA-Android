@@ -108,17 +108,20 @@ public class Constants {
                 }});
 
     public static int getHomeTeamColor(String homeTeam){
-        return primaryColors.get(homeTeam);
+        return primaryColors.get(homeTeam.toLowerCase());
    }
 
     public static int getAwayTeamColor(String homeTeam, String awayTeam){
-        int home = primaryColors.get(homeTeam);
-        int away = primaryColors.get(awayTeam);
+        String homea = homeTeam.toLowerCase();
+        String awaya = awayTeam.toLowerCase();
+
+        int home = primaryColors.get(homeTeam.toLowerCase());
+        int away = primaryColors.get(awayTeam.toLowerCase());
 
         if (home == away){
-            return secondaryColors.get(awayTeam);
+            return secondaryColors.get(awayTeam.toLowerCase());
         }
-        return primaryColors.get(awayTeam);
+        return primaryColors.get(awayTeam.toLowerCase());
     }
     public static int getDrawableFromString(String teamName){
         switch (teamName){

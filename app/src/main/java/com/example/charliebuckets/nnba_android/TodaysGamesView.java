@@ -1,17 +1,17 @@
 package com.example.charliebuckets.nnba_android;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
+
+import com.example.charliebuckets.nnba_android.util.NetworkUtility;
 
 import java.util.ArrayList;
-import java.util.concurrent.ConcurrentNavigableMap;
+
+import rx.android.schedulers.AndroidSchedulers;
 
 public class TodaysGamesView extends AppCompatActivity {
 
@@ -26,13 +26,11 @@ public class TodaysGamesView extends AppCompatActivity {
                 "phoenixsuns", "portlandtrailblazers", "sacramentokings", "sanantoniospurs",
                 "torontoraptors",  "utahjazz", "washingtonwizards" };
 
-        ArrayList<Game> todaysGames = new ArrayList<Game>();
-        for (int i = 0; i < teamList.length/2; i ++){
 
-            int homeId = Constants.getDrawableFromString(teamList[i*2]);//getResources().getIdentifier("res/drawable/" + teamList[i*2], null, null);
-            int awayId = Constants.getDrawableFromString(teamList[(i*2)+1]);//getResources().getIdentifier("res/drawable/" + teamList[i*2]+1, null, null);
-            todaysGames.add(new Game(teamList[i*2], teamList[(i*2)+1], "99", "99", homeId, awayId));
-        }
+        String todaysGamesURL = "http://192.168.1.81/todaysGames";
+        //String todaysGamesURL = "http://127.0.0.1/todaysGames";
+        //String todaysGamesURL = "https://api.github.com/users/cgudea";
+
 
 
         super.onCreate(savedInstanceState);
@@ -45,9 +43,13 @@ public class TodaysGamesView extends AppCompatActivity {
         LinearLayoutManager llm = new LinearLayoutManager(this);
         rv.setLayoutManager(llm);
 
-        RVAdapter adapter = new RVAdapter(todaysGames, getApplicationContext());
-        rv.setAdapter(adapter);
-
+        NetworkUtility.htmlObersevableTest(todaysGamesURL)
+                .observeOn(AndroidSchedulers.mainThread())
+                .toList()
+                .subscribe(gamesList -> {
+                    RVAdapter adapter = new RVAdapter((ArrayList<Game>)gamesList, this);
+                    rv.setAdapter(adapter);
+                });
 
     }
 
@@ -71,10 +73,6 @@ public class TodaysGamesView extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public void goToTodaysGames(View view){
-        int a = 0;
     }
 
 

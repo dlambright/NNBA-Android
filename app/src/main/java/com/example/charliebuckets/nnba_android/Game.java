@@ -12,14 +12,23 @@ public class Game {
     public int awayTeamId;
 
 
-    public Game(String newHomeTeam, String newAwayTeam, String newHomeTeamScore, String newAwayTeamScore, int newHomeId, int newAwayId){
+
+    public Game(String newHomeTeam, String newHomeTeamScore,  String newAwayTeam, String newAwayTeamScore, int newHomeId, int newAwayId){
         homeTeam = newHomeTeam;
         awayTeam = newAwayTeam;
         homeTeamScore = newHomeTeamScore;
         awayTeamScore = newAwayTeamScore;
         homeTeamId = newHomeId;
         awayTeamId = newAwayId;
+    }
 
+    public Game(String newHomeTeam, String newHomeTeamScore, String newAwayTeam, String newAwayTeamScore){
+        homeTeam = newHomeTeam;
+        awayTeam = newAwayTeam;
+        homeTeamScore = newHomeTeamScore;
+        awayTeamScore = newAwayTeamScore;
+        homeTeamId = Constants.getDrawableFromString(newHomeTeam.toLowerCase());
+        awayTeamId = Constants.getDrawableFromString(newAwayTeam.toLowerCase());
     }
 
 }

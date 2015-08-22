@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.charliebuckets.nnba_android.util.ImageUtility;
 
@@ -81,6 +82,9 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.CellViewHolder> {
         cellViewHolder.homeTeamName = tempGame.homeTeam;
         cellViewHolder.awayTeamName = tempGame.awayTeam;
 
+        cellViewHolder.txtHomeTeamScore.setText(tempGame.homeTeamScore);
+        cellViewHolder.txtAwayTeamScore.setText(tempGame.awayTeamScore);
+
     }
 
     @Override
@@ -99,6 +103,8 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.CellViewHolder> {
         public String awayTeamName;
         public HomeTeamBackground homeTeamColorView;
         public AwayTeamBackground awayTeamColorView;
+        public TextView txtHomeTeamScore;
+        public TextView txtAwayTeamScore;
 
 
 
@@ -110,12 +116,15 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.CellViewHolder> {
             awayTeam = (ImageView)itemView.findViewById(R.id.awayTeamImage);
             homeTeamColorView = (HomeTeamBackground)itemView.findViewById(R.id.homeTeamColorView);
             awayTeamColorView = (AwayTeamBackground)itemView.findViewById(R.id.awayTeamColorView);
+            txtHomeTeamScore = (TextView)itemView.findViewById(R.id.homeTeamScore);
+            txtAwayTeamScore = (TextView)itemView.findViewById(R.id.awayTeamScore);
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent i = new Intent(v.getContext(), CurrentGameActivity.class);
-                    i.putExtra("homeTeamName", homeTeamName);
-                    i.putExtra("awayTeamName", awayTeamName);
+                    i.putExtra("homeTeamName", homeTeamName.toLowerCase());
+                    i.putExtra("awayTeamName", awayTeamName.toLowerCase());
                     v.getContext().startActivity(i);
                 }
             });
