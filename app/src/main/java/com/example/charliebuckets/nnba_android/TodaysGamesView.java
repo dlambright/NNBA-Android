@@ -43,7 +43,7 @@ public class TodaysGamesView extends AppCompatActivity {
         LinearLayoutManager llm = new LinearLayoutManager(this);
         rv.setLayoutManager(llm);
 
-        NetworkUtility.htmlObersevableTest(todaysGamesURL)
+        NetworkUtility.getTodaysGames(todaysGamesURL)
                 .observeOn(AndroidSchedulers.mainThread())
                 .toList()
                 .subscribe(gamesList -> {

@@ -123,8 +123,8 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.CellViewHolder> {
                 @Override
                 public void onClick(View v) {
                     Intent i = new Intent(v.getContext(), CurrentGameActivity.class);
-                    i.putExtra("homeTeamName", homeTeamName.toLowerCase());
-                    i.putExtra("awayTeamName", awayTeamName.toLowerCase());
+                    i.putExtra("homeTeamName", homeTeamName);
+                    i.putExtra("awayTeamName", awayTeamName);
                     v.getContext().startActivity(i);
                 }
             });
