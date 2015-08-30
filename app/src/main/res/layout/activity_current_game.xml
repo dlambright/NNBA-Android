@@ -51,7 +51,7 @@
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
                 android:layout_marginTop="@dimen/statsholder_margin_vertical"
                 android:layout_marginBottom="@dimen/statsholder_margin_vertical"
-
+                android:onClick="onClick"
                 />
             <TextView
                 android:id="@+id/homeWinPct"
@@ -93,6 +93,7 @@
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
                 android:layout_marginTop="@dimen/statsholder_margin_vertical"
                 android:layout_marginBottom="@dimen/statsholder_margin_vertical"
+                android:onClick="onClick"
                 />
             <TextView
                 android:id="@+id/homeScore"
@@ -135,6 +136,7 @@
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
                 android:layout_marginTop="@dimen/statsholder_margin_vertical"
                 android:layout_marginBottom="@dimen/statsholder_margin_vertical"
+                android:onClick="onClick"
                 />
             <TextView
                 android:id="@+id/homeFieldGoals"
@@ -177,6 +179,7 @@
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
                 android:layout_marginTop="@dimen/statsholder_margin_vertical"
                 android:layout_marginBottom="@dimen/statsholder_margin_vertical"
+                android:onClick="onClick"
                 />
             <TextView
                 android:id="@+id/homeThreePointFieldGoals"
@@ -219,6 +222,7 @@
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
                 android:layout_marginTop="@dimen/statsholder_margin_vertical"
                 android:layout_marginBottom="@dimen/statsholder_margin_vertical"
+                android:onClick="onClick"
                 />
             <TextView
                 android:id="@+id/homefreeThrows"
@@ -260,6 +264,7 @@
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
                 android:layout_marginTop="@dimen/statsholder_margin_vertical"
                 android:layout_marginBottom="@dimen/statsholder_margin_vertical"
+                android:onClick="onClick"
                 />
             <TextView
                 android:id="@+id/homeRebounds"
@@ -302,6 +307,7 @@
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
                 android:layout_marginTop="@dimen/statsholder_margin_vertical"
                 android:layout_marginBottom="@dimen/statsholder_margin_vertical"
+                android:onClick="onClick"
                 />
             <TextView
                 android:id="@+id/homeSteals"
@@ -344,6 +350,7 @@
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
                 android:layout_marginTop="@dimen/statsholder_margin_vertical"
                 android:layout_marginBottom="@dimen/statsholder_margin_vertical"
+                android:onClick="onClick"
                 />
             <TextView
                 android:id="@+id/homeBlocks"
@@ -386,6 +393,7 @@
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
                 android:layout_marginTop="@dimen/statsholder_margin_vertical"
                 android:layout_marginBottom="@dimen/statsholder_margin_vertical"
+                android:onClick="onClick"
                 />
             <TextView
                 android:id="@+id/homeAssists"
@@ -428,6 +436,7 @@
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
                 android:layout_marginTop="@dimen/statsholder_margin_vertical"
                 android:layout_marginBottom="@dimen/statsholder_margin_vertical"
+                android:onClick="onClick"
                 />
             <TextView
                 android:id="@+id/homeTSP"
@@ -456,14 +465,32 @@
                 />
 
 <!-- GRAPH VIEW -->
-
-            <View
+            <TextView
+                android:id="@+id/txtTableHeader"
+                android:layout_below="@+id/awayTSP"
+                android:text="SCORE"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="@dimen/statsholder_margin_horizontal"
+                android:layout_marginLeft="@dimen/statsholder_margin_horizontal"
                 android:background="@drawable/view_modifiers"
-                android:layout_marginTop="@dimen/statsholder_label_margin"
+                />
+
+            <lecho.lib.hellocharts.view.LineChartView
+                android:id="@+id/chart"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
                 android:layout_marginBottom="100dp"
-                android:layout_below="@+id/tspMiddle"/>
+                android:layout_below="@+id/txtTableHeader"
+                android:background="@drawable/view_modifiers"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                />
 
         </RelativeLayout>
 

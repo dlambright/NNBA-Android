@@ -4,22 +4,21 @@
     android:layout_height="match_parent"
     android:layout_marginTop="5dp"
     android:layout_marginBottom="5dp"
-    android:background="@color/dark_background">
-
+    android:background="@color/little_lighter_background">
 
     <com.example.charliebuckets.nnba_android.HomeTeamBackground
-    android:id="@+id/homeTeamColorView"
-    android:layout_width="match_parent"
-    android:layout_marginRight="176dp"
-    android:layout_height="140dp"/>
+        android:id="@+id/homeTeamColorView"
+        android:layout_width="210dp"
+        android:layout_height="140dp"
+        />
 
     <com.example.charliebuckets.nnba_android.AwayTeamBackground
         android:id="@+id/awayTeamColorView"
-        android:layout_width="match_parent"
+        android:layout_width="210dp"
         android:layout_height="140dp"
-        android:layout_marginLeft="176dp"
-        android:layout_gravity="right"
-    />
+        android:layout_alignParentRight="true"
+        />
+
 
 
 
@@ -124,6 +123,8 @@
         android:gravity="center"
         android:textStyle="bold|italic"
         android:textSize="16dp"/>
+
+
 
 
 

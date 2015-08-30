@@ -74,10 +74,10 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.CellViewHolder> {
                 });
 
         cellViewHolder.awayTeamColorView.setColor(Constants.getAwayTeamColor(tempGame.homeTeam, tempGame.awayTeam));
-        cellViewHolder.homeTeamColorView.setAlpha(.5f);
+        cellViewHolder.homeTeamColorView.setAlpha(.6f);
 
         cellViewHolder.homeTeamColorView.setColor(Constants.getHomeTeamColor(tempGame.homeTeam));
-        cellViewHolder.awayTeamColorView.setAlpha(.5f);
+        cellViewHolder.awayTeamColorView.setAlpha(.6f);
 
         cellViewHolder.homeTeamName = tempGame.homeTeam;
         cellViewHolder.awayTeamName = tempGame.awayTeam;

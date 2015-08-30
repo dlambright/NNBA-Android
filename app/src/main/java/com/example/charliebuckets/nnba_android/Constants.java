@@ -112,8 +112,6 @@ public class Constants {
    }
 
     public static int getAwayTeamColor(String homeTeam, String awayTeam){
-        String homea = homeTeam.toLowerCase();
-        String awaya = awayTeam.toLowerCase();
 
         int home = primaryColors.get(homeTeam.toLowerCase());
         int away = primaryColors.get(awayTeam.toLowerCase());
@@ -182,7 +180,7 @@ public class Constants {
             case "neworleanspelicans":
                 return R.drawable.neworleanspelicans;
 
-            case"newyorkknicks":
+            case "newyorkknicks":
                 return R.drawable.newyorkknicks;
 
             case "oklahomacitythunder":

@@ -11,9 +11,12 @@ import com.example.charliebuckets.nnba_android.util.NetworkUtility;
 
 import java.util.ArrayList;
 
+import lecho.lib.hellocharts.model.ValueShape;
+import lecho.lib.hellocharts.view.LineChartView;
 import rx.android.schedulers.AndroidSchedulers;
 
 public class TodaysGamesView extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +53,9 @@ public class TodaysGamesView extends AppCompatActivity {
                     RVAdapter adapter = new RVAdapter((ArrayList<Game>)gamesList, this);
                     rv.setAdapter(adapter);
                 });
+
+
+
 
     }
 

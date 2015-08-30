@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="dark_background">#646464</color>
+    <color name="little_lighter_background">#808080</color>
     <color name="black">#000000</color>
-
+    <color name="white">#FFFFFF</color>
+    <color name="NNBA_Blue">#00B2DB</color>
 </resources>
