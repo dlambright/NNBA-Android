@@ -23,7 +23,7 @@
                 android:layout_height="150dp"
                 android:layout_margin="@dimen/cell_image_padding"
                 android:layout_gravity="top|left"
-                android:background="@drawable/view_modifiers"
+                android:background="@drawable/background_white_round_edges"
                 />
 
             <ImageView
@@ -32,9 +32,11 @@
                 android:layout_height="150dp"
                 android:layout_margin="@dimen/cell_image_padding"
                 android:layout_gravity="right"
-                android:background="@drawable/view_modifiers"
+                android:background="@drawable/background_white_round_edges"
                 android:layout_alignParentRight="true"
                 />
+
+
 
 <!--Win Percnetage-->
             <TextView
@@ -46,7 +48,7 @@
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:background="@drawable/view_modifiers"
+                android:background="@drawable/background_white_round_edges"
                 android:layout_marginLeft="@dimen/statsholder_margin_horizontal"
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
                 android:layout_marginTop="@dimen/statsholder_margin_vertical"
@@ -88,7 +90,7 @@
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:background="@drawable/view_modifiers"
+                android:background="@drawable/background_white_round_edges"
                 android:layout_marginLeft="@dimen/statsholder_margin_horizontal"
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
                 android:layout_marginTop="@dimen/statsholder_margin_vertical"
@@ -131,7 +133,7 @@
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:background="@drawable/view_modifiers"
+                android:background="@drawable/background_white_round_edges"
                 android:layout_marginLeft="@dimen/statsholder_margin_horizontal"
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
                 android:layout_marginTop="@dimen/statsholder_margin_vertical"
@@ -174,7 +176,7 @@
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:background="@drawable/view_modifiers"
+                android:background="@drawable/background_white_round_edges"
                 android:layout_marginLeft="@dimen/statsholder_margin_horizontal"
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
                 android:layout_marginTop="@dimen/statsholder_margin_vertical"
@@ -217,7 +219,7 @@
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:background="@drawable/view_modifiers"
+                android:background="@drawable/background_white_round_edges"
                 android:layout_marginLeft="@dimen/statsholder_margin_horizontal"
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
                 android:layout_marginTop="@dimen/statsholder_margin_vertical"
@@ -259,7 +261,7 @@
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:background="@drawable/view_modifiers"
+                android:background="@drawable/background_white_round_edges"
                 android:layout_marginLeft="@dimen/statsholder_margin_horizontal"
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
                 android:layout_marginTop="@dimen/statsholder_margin_vertical"
@@ -302,7 +304,7 @@
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:background="@drawable/view_modifiers"
+                android:background="@drawable/background_white_round_edges"
                 android:layout_marginLeft="@dimen/statsholder_margin_horizontal"
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
                 android:layout_marginTop="@dimen/statsholder_margin_vertical"
@@ -345,7 +347,7 @@
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:background="@drawable/view_modifiers"
+                android:background="@drawable/background_white_round_edges"
                 android:layout_marginLeft="@dimen/statsholder_margin_horizontal"
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
                 android:layout_marginTop="@dimen/statsholder_margin_vertical"
@@ -388,7 +390,7 @@
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:background="@drawable/view_modifiers"
+                android:background="@drawable/background_white_round_edges"
                 android:layout_marginLeft="@dimen/statsholder_margin_horizontal"
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
                 android:layout_marginTop="@dimen/statsholder_margin_vertical"
@@ -431,7 +433,7 @@
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:background="@drawable/view_modifiers"
+                android:background="@drawable/background_white_round_edges"
                 android:layout_marginLeft="@dimen/statsholder_margin_horizontal"
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
                 android:layout_marginTop="@dimen/statsholder_margin_vertical"
@@ -472,25 +474,57 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textStyle="bold"
                 android:gravity="center"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
                 android:layout_marginLeft="@dimen/statsholder_margin_horizontal"
-                android:background="@drawable/view_modifiers"
+                android:background="@drawable/background_white_round_edges"
+                android:backgroundTint="#00B2DB"
                 />
 
             <lecho.lib.hellocharts.view.LineChartView
                 android:id="@+id/chart"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:layout_marginBottom="100dp"
                 android:layout_below="@+id/txtTableHeader"
-                android:background="@drawable/view_modifiers"
+                android:background="@drawable/background_white_round_edges"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginBottom="100dp"
                 />
+            <TextView
+                android:id="@+id/homeTeamColorView"
+                android:layout_below="@+id/txtTableHeader"
+                android:text="JAZZ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="@drawable/background_white_round_edges"
+                android:layout_marginLeft="@dimen/statsholder_number_margin"
+                android:layout_marginRight="@dimen/statsholder_margin_horizontal"
+                android:layout_marginTop="@dimen/statsholder_margin_vertical"
+                android:backgroundTint="#333333"
+                />
+            <TextView
+                android:id="@+id/awayTeamColorView"
+                android:layout_below="@+id/homeTeamColorView"
+                android:text="LAKERS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="@drawable/background_white_round_edges"
+                android:layout_marginLeft="@dimen/statsholder_number_margin"
+                android:layout_marginRight="@dimen/statsholder_margin_horizontal"
+                android:layout_marginTop="@dimen/statsholder_margin_vertical"
+                android:backgroundTint="#CCCCCC"
+                />
+
 
         </RelativeLayout>
 

@@ -8,8 +8,10 @@ public class Game {
     public String awayTeam;
     public String homeTeamScore;
     public String awayTeamScore;
-    public int homeTeamId;
-    public int awayTeamId;
+    public int homeTeamId; //intFix
+    public int awayTeamId; //intFix
+    public String time;
+    public String gameId;
 
 
 
@@ -29,6 +31,10 @@ public class Game {
         awayTeamScore = newAwayTeamScore;
         homeTeamId = Constants.getDrawableFromString(newHomeTeam.toLowerCase());
         awayTeamId = Constants.getDrawableFromString(newAwayTeam.toLowerCase());
+    }
+    public void setGameIds(){
+        this.homeTeamId = Constants.getDrawableFromString(this.homeTeam.toLowerCase());
+        this.awayTeamId = Constants.getDrawableFromString(this.awayTeam.toLowerCase());
     }
 
 }

@@ -7,6 +7,8 @@ import android.util.Log;
 
 import com.example.charliebuckets.nnba_android.Constants;
 import com.example.charliebuckets.nnba_android.Game;
+import com.example.charliebuckets.nnba_android.rest.GetDataRestAdapter;
+import com.google.gson.Gson;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -27,6 +29,9 @@ import rx.schedulers.Schedulers;
  * Created by charliebuckets on 8/19/15.
  */
 public class NetworkUtility {
+
+    private Gson gson;  //DUSTIN ADD
+    private GetDataRestAdapter getDataRestAdapter;
 
     // parsing
     private static String getHtml(String stringURL){
@@ -55,6 +60,7 @@ public class NetworkUtility {
 
         return null;
     }
+
 
 
     public static Observable<Game> getTodaysGames(final String stringURL){

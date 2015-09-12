@@ -1,5 +1,7 @@
 package com.example.charliebuckets.nnba_android;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -46,6 +48,9 @@ public class CurrentGameActivity extends AppCompatActivity {
     private TextView txtHomeAssists, txtAwayAssists;
     private TextView txtHomeTSP, txtAwayTSP;
     private TextView txtChartHeader;
+
+    private TextView txtHomeTeamColor;
+    private TextView txtAwayTeamColor;
 
 // Chart variables
     LineChartView lineChartView;
@@ -123,7 +128,7 @@ public class CurrentGameActivity extends AppCompatActivity {
                     txtAwayTSP.setText(df.format(Float.parseFloat(awayTeamStats[awayTeamStats.length - 3])));
                 });
 
-//        initializeViews();
+        initializeViews();
 
 
 
@@ -151,6 +156,7 @@ public class CurrentGameActivity extends AppCompatActivity {
         txtHomeAssists = (TextView)findViewById(R.id.homeAssists);
         txtHomeTSP= (TextView)findViewById(R.id.homeTSP);
         txtHomeAssists = (TextView)findViewById(R.id.homeAssists);
+        txtHomeTeamColor = (TextView)findViewById(R.id.homeTeamColorView);
 
         txtAwayWinProbability = (TextView)findViewById(R.id.awayWinPct);
         txtAwayScore = (TextView)findViewById(R.id.awayScore);
@@ -163,11 +169,13 @@ public class CurrentGameActivity extends AppCompatActivity {
         txtAwayAssists = (TextView)findViewById(R.id.awayAssists);
         txtAwayTSP= (TextView)findViewById(R.id.awayTSP);
         txtAwayAssists = (TextView)findViewById(R.id.awayAssists);
-
+        txtAwayTeamColor = (TextView)findViewById(R.id.awayTeamColorView);
         txtChartHeader = (TextView) findViewById(R.id.txtTableHeader);
-//        txtChartHeader.setBackgroundColor(getResources().getColor(R.color.NNBA_Blue));
         lineChartView = (LineChartView) findViewById(R.id.chart);
 
+//        txtHomeTeamColor.setBackgroundTintList(ColorStateList.valueOf(Constants.getHomeTeamColor(homeTeamString)));
+        txtHomeTeamColor.setBackgroundColor(Constants.getHomeTeamColor(homeTeamString));
+        txtAwayTeamColor.setBackgroundColor(Constants.getAwayTeamColor(homeTeamString, awayTeamString));
     }
 
 
@@ -283,8 +291,8 @@ public class CurrentGameActivity extends AppCompatActivity {
             Axis axisX = new Axis();
             Axis axisY = new Axis().setHasLines(true);
             if (hasAxesNames) {
-                axisX.setName("Axis X");
-                axisY.setName("Axis Y");
+                axisX.setName("Time");
+                axisY.setName(txtChartHeader.getText().toString());
             }
             data.setAxisXBottom(axisX);
             data.setAxisYLeft(axisY);
