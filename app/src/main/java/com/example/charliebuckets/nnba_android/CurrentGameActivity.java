@@ -1,8 +1,8 @@
 package com.example.charliebuckets.nnba_android;
 
-import android.content.res.ColorStateList;
-import android.graphics.Color;
+
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
@@ -10,12 +10,8 @@ import android.widget.TextView;
 
 import com.example.charliebuckets.nnba_android.util.NetworkUtility;
 
-import org.w3c.dom.Text;
-
-import java.lang.reflect.Array;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import lecho.lib.hellocharts.model.Axis;
@@ -23,7 +19,6 @@ import lecho.lib.hellocharts.model.Line;
 import lecho.lib.hellocharts.model.LineChartData;
 import lecho.lib.hellocharts.model.PointValue;
 import lecho.lib.hellocharts.model.ValueShape;
-import lecho.lib.hellocharts.util.ChartUtils;
 import lecho.lib.hellocharts.view.LineChartView;
 import rx.android.schedulers.AndroidSchedulers;
 
@@ -74,7 +69,7 @@ public class CurrentGameActivity extends AppCompatActivity {
     private boolean pointsHaveDifferentColor = false;
 
 
-    private String baseUrl = "http://192.168.1.81/";
+    private String baseUrl = "http://nnba.ddns.net:11358/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,7 +123,8 @@ public class CurrentGameActivity extends AppCompatActivity {
                     txtAwayTSP.setText(df.format(Float.parseFloat(awayTeamStats[awayTeamStats.length - 3])));
                 });
 
-        initializeViews();
+        //initializeViews();
+
 
 
 
@@ -173,20 +169,28 @@ public class CurrentGameActivity extends AppCompatActivity {
         txtChartHeader = (TextView) findViewById(R.id.txtTableHeader);
         lineChartView = (LineChartView) findViewById(R.id.chart);
 
+
 //        txtHomeTeamColor.setBackgroundTintList(ColorStateList.valueOf(Constants.getHomeTeamColor(homeTeamString)));
+
+        txtHomeTeamColor.setText(Constants.getTeamNameFromFullName(homeTeamString.toLowerCase()).toUpperCase());
+        txtAwayTeamColor.setText(Constants.getTeamNameFromFullName(awayTeamString.toLowerCase()).toUpperCase());
         txtHomeTeamColor.setBackgroundColor(Constants.getHomeTeamColor(homeTeamString));
         txtAwayTeamColor.setBackgroundColor(Constants.getAwayTeamColor(homeTeamString, awayTeamString));
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(Constants.getTeamNameFromFullName(homeTeamString.toLowerCase()) + "  vs  " + Constants.getTeamNameFromFullName(awayTeamString.toLowerCase()));
+
     }
 
 
     //Check this method
     public void onClick (View v){
-        TextView tv = (TextView)v;
-
-        String statsCategory = tv.getText().toString();
-        txtChartHeader.setText(statsCategory);
-
-        setChartData(getTableValuesFromView(tv));
+        if (homeTeamStats != null && awayTeamStats != null) {
+            TextView tv = (TextView) v;
+            String statsCategory = tv.getText().toString();
+            txtChartHeader.setText(statsCategory);
+            setChartData(getTableValuesFromView(tv));
+        }
     }
 
     private int getTableValuesFromView(View v) {
@@ -290,6 +294,7 @@ public class CurrentGameActivity extends AppCompatActivity {
         if (hasAxes) {
             Axis axisX = new Axis();
             Axis axisY = new Axis().setHasLines(true);
+
             if (hasAxesNames) {
                 axisX.setName("Time");
                 axisY.setName(txtChartHeader.getText().toString());
@@ -303,6 +308,7 @@ public class CurrentGameActivity extends AppCompatActivity {
 
         data.setBaseValue(Float.NEGATIVE_INFINITY);
         lineChartView.setLineChartData(data);
+
 
     }
 }

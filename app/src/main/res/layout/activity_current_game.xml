@@ -61,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:text="95.1%"
+                android:text="LOADING"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:layout_marginLeft="@dimen/statsholder_number_margin"
@@ -74,7 +74,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:text="12.4%"
+                android:text="LOADING"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:layout_marginTop="10dp"
@@ -103,7 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:text="100"
+                android:text="LOADING"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:layout_marginLeft="@dimen/statsholder_number_margin"
@@ -116,7 +116,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:text="99"
+                android:text="LOADING"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:layout_marginTop="@dimen/statsholder_label_margin"
@@ -143,7 +143,7 @@
             <TextView
                 android:id="@+id/homeFieldGoals"
                 android:layout_below="@+id/scoreMiddle"
-                android:text="13/25"
+                android:text="LOADING"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -156,7 +156,7 @@
             <TextView
                 android:id="@+id/awayFieldGoals"
                 android:layout_below="@+id/scoreMiddle"
-                android:text="99/100"
+                android:text="LOADING"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -186,7 +186,7 @@
             <TextView
                 android:id="@+id/homeThreePointFieldGoals"
                 android:layout_below="@+id/fieldGoalsMiddle"
-                android:text="10/13"
+                android:text="LOADING"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -199,7 +199,7 @@
             <TextView
                 android:id="@+id/awayThreePointFieldGoals"
                 android:layout_below="@+id/fieldGoalsMiddle"
-                android:text="1/2"
+                android:text="LOADING"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -229,7 +229,7 @@
             <TextView
                 android:id="@+id/homefreeThrows"
                 android:layout_below="@+id/threePointMiddle"
-                android:text="20/22"
+                android:text="LOADING"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -242,7 +242,7 @@
             <TextView
                 android:id="@+id/awayFreeThrows"
                 android:layout_below="@+id/threePointMiddle"
-                android:text="10/11"
+                android:text="LOADING"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -271,7 +271,7 @@
             <TextView
                 android:id="@+id/homeRebounds"
                 android:layout_below="@+id/freeThrowsMiddle"
-                android:text="5/10/15"
+                android:text="LOADING"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -284,7 +284,7 @@
             <TextView
                 android:id="@+id/awayRebounds"
                 android:layout_below="@+id/freeThrowsMiddle"
-                android:text="6/11/17"
+                android:text="LOADING"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -314,7 +314,7 @@
             <TextView
                 android:id="@+id/homeSteals"
                 android:layout_below="@+id/reboundsMiddle"
-                android:text="5"
+                android:text="LOADING"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -327,7 +327,7 @@
             <TextView
                 android:id="@+id/awaySteals"
                 android:layout_below="@+id/reboundsMiddle"
-                android:text="17"
+                android:text="LOADING"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -357,7 +357,7 @@
             <TextView
                 android:id="@+id/homeBlocks"
                 android:layout_below="@+id/stealsMiddle"
-                android:text="2"
+                android:text="LOADING"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -370,7 +370,7 @@
             <TextView
                 android:id="@+id/awayBlocks"
                 android:layout_below="@+id/stealsMiddle"
-                android:text="4"
+                android:text="LOADING"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -400,7 +400,7 @@
             <TextView
                 android:id="@+id/homeAssists"
                 android:layout_below="@+id/blocksMiddle"
-                android:text="42"
+                android:text="LOADING"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -413,7 +413,7 @@
             <TextView
                 android:id="@+id/awayAssists"
                 android:layout_below="@+id/blocksMiddle"
-                android:text="0"
+                android:text="LOADING"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -443,7 +443,7 @@
             <TextView
                 android:id="@+id/homeTSP"
                 android:layout_below="@+id/assistsMiddle"
-                android:text="15.1%"
+                android:text="LOADING"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -456,7 +456,7 @@
             <TextView
                 android:id="@+id/awayTSP"
                 android:layout_below="@+id/assistsMiddle"
-                android:text="35.5%"
+                android:text="LOADING"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -470,7 +470,7 @@
             <TextView
                 android:id="@+id/txtTableHeader"
                 android:layout_below="@+id/awayTSP"
-                android:text="SCORE"
+                android:text="TAP A CATEGORY TO SEE THE CHART"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -492,11 +492,11 @@
                 android:background="@drawable/background_white_round_edges"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginBottom="100dp"
+                android:layout_marginBottom="8dp"
                 />
             <TextView
                 android:id="@+id/homeTeamColorView"
-                android:layout_below="@+id/txtTableHeader"
+                android:layout_below="@+id/chart"
                 android:text="JAZZ"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -504,14 +504,12 @@
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:background="@drawable/background_white_round_edges"
-                android:layout_marginLeft="@dimen/statsholder_number_margin"
-                android:layout_marginRight="@dimen/statsholder_margin_horizontal"
-                android:layout_marginTop="@dimen/statsholder_margin_vertical"
-                android:backgroundTint="#333333"
+                android:layout_marginLeft="@dimen/statsholder_margin_horizontal"
                 />
             <TextView
                 android:id="@+id/awayTeamColorView"
-                android:layout_below="@+id/homeTeamColorView"
+                android:layout_below="@+id/chart"
+                android:layout_toRightOf="@+id/homeTeamColorView"
                 android:text="LAKERS"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -519,10 +517,9 @@
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:background="@drawable/background_white_round_edges"
-                android:layout_marginLeft="@dimen/statsholder_number_margin"
                 android:layout_marginRight="@dimen/statsholder_margin_horizontal"
-                android:layout_marginTop="@dimen/statsholder_margin_vertical"
-                android:backgroundTint="#CCCCCC"
+                android:layout_marginBottom="50dp"
+
                 />
 
 

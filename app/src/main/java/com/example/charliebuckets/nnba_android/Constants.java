@@ -18,8 +18,8 @@ public class Constants {
                 put("atlantahawks","Hawks");
                 put("bostonceltics","Celtics");
                 put("brooklynnets", "Nets");
-                put("charlottehornets", "hornets");
-                put("chicagobulls", "bulls");
+                put("charlottehornets", "Hornets");
+                put("chicagobulls", "Bulls");
                 put("clevelandcavaliers", "Cavaliers");
                 put("dallasmavericks", "Mavericks");
                 put("denvernuggets", "Nuggets");
@@ -72,7 +72,7 @@ public class Constants {
                     put("milwaukeebucks",  Color.rgb( 0 ,  71 ,  27 ));
                     put("minnesotatimberwolves",  Color.rgb( 0 , 80 ,  131 ));
                     put("neworleanspelicans",  Color.rgb( 0 ,  43 ,  92 ));
-                    put("newyorkknicks",  Color.rgb( 245 ,  132 ,  38 ));
+                    put("newyorkknicks",  Color.rgb( 0, 107, 182 ));
                     put("oklahomacitythunder",  Color.rgb( 0 , 125 ,  197 ));
                     put("orlandomagic"  ,  Color.rgb(0 , 125 , 197 ));
                     put("philadelphia76ers",  Color.rgb( 237 ,  23 ,  76  ));
@@ -89,19 +89,33 @@ public class Constants {
     public static final Map<String, Integer> secondaryColors = Collections.unmodifiableMap(
             new HashMap<String, Integer>() {
                 {
-                    put("atlantahawks", Color.rgb(0, 43, 92));
+                    put("atlantahawks", Color.rgb(196, 214, 0));
+                    put("bostonceltics",  Color.rgb(187, 151, 83));
+                    put("brooklynnets" ,  Color.rgb(186 , 195 ,  201));
+                    put("charlottehornets",  Color.rgb(0, 140, 168));
                     put("chicagobulls", Color.rgb(6, 25, 34));
+                    put("clevelandcavaliers",  Color.rgb(253, 187, 48));
                     put("dallasmavericks", Color.rgb(196, 206, 211));
-                    put("detriotpistons", Color.rgb(237, 23, 76));
-                    put("goldenstatewarriors", Color.rgb(253, 185, 39));
-                    put("houstonrockets", Color.rgb(206, 17, 65));
-                    put("losangelesclippers", Color.rgb(237, 23, 76));
+                    put("denvernuggets",  Color.rgb(253, 185, 39));
+                    put("detriotpistons", Color.rgb(0, 107, 182));
+                    put("goldenstatewarriors", Color.rgb(0, 107, 182));
+                    put("houstonrockets", Color.rgb(196, 206, 211));
+                    put("indianapacers",  Color.rgb(0, 39, 93));
+                    put("losangelesclippers", Color.rgb(0, 107, 182));
                     put("losangeleslakers", Color.rgb(85, 37, 130));
+                    put("memphisgrizzlies",  Color.rgb(115, 153, 198));
+                    put("miamiheat",  Color.rgb(249, 160, 27));
+                    put("milwaukeebucks",  Color.rgb(6, 25, 34));
+                    put("minnesotatimberwolves",  Color.rgb(0, 169, 79));
                     put("neworleanspelicans", Color.rgb(227, 24, 55));
+                    put("newyorkknicks",  Color.rgb( 245 ,  132 ,  38 ));
                     put("oklahomacitythunder", Color.rgb(240, 81, 51));
                     put("orlandomagic", Color.rgb(196, 206, 211));
+                    put("phoenixsuns",  Color.rgb(29, 17, 96));
                     put("philadelphia76ers", Color.rgb(0, 107, 182));
                     put("portlandtrailblazers", Color.rgb(186, 195, 201));
+                    put("sacramentokings",  Color.rgb(142, 144, 144));
+                    put("sanantoniospurs",  Color.rgb(6, 25, 34 ));
                     put("torontoraptors", Color.rgb(6, 25, 34));
                     put("utahjazz", Color.rgb(0, 71, 27));
                     put("washingtonwizards", Color.rgb(227, 24, 55));
@@ -116,11 +130,28 @@ public class Constants {
         int home = primaryColors.get(homeTeam.toLowerCase());
         int away = primaryColors.get(awayTeam.toLowerCase());
 
-        if (home == away){
+        if(getDistanceFromColors(home, away) < 35){
             return secondaryColors.get(awayTeam.toLowerCase());
         }
+
         return primaryColors.get(awayTeam.toLowerCase());
     }
+
+    public static double getDistanceFromColors(int homeTeamInt, int awayTeamInt){
+        int homeBlue = (homeTeamInt)&0xFF;
+        int homeGreen = (homeTeamInt>>8)&0xFF;
+        int homeRed = (homeTeamInt>>16)&0xFF;
+
+        int awayBlue = (awayTeamInt)&0xFF;
+        int awayGreen = (awayTeamInt>>8)&0xFF;
+        int awayRed = (awayTeamInt>>16)&0xFF;
+
+        double yoyo =  Math.sqrt((Math.pow((homeBlue - awayBlue), 2) + Math.pow((homeGreen - awayGreen), 2) + Math.pow((homeRed - awayRed), 2)));
+
+        return yoyo;
+
+    }
+
     public static int getDrawableFromString(String teamName){
         switch (teamName){
             case "atlantahawks":
@@ -219,4 +250,6 @@ public class Constants {
         }
 
     }
+
+
 }

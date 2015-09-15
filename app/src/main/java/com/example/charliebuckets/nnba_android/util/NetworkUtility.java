@@ -30,9 +30,6 @@ import rx.schedulers.Schedulers;
  */
 public class NetworkUtility {
 
-    private Gson gson;  //DUSTIN ADD
-    private GetDataRestAdapter getDataRestAdapter;
-
     // parsing
     private static String getHtml(String stringURL){
 

@@ -24,30 +24,11 @@ public class TodaysGamesView extends AppCompatActivity {
     private GetDataRestAdapter getDataRestAdapter = new GetDataRestAdapter();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        String teamList[] = {"atlantahawks", "bostonceltics", "brooklynnets",
-                "charlottehornets", "chicagobulls", "clevelandcavaliers", "dallasmavericks",
-                "denvernuggets", "detroitpistons", "goldenstatewarriors", "houstonrockets",
-                "indianapacers", "losangelesclippers", "losangeleslakers", "memphisgrizzlies",
-                "miamiheat", "milwaukeebucks", "minnesotatimberwolves", "neworleanspelicans",
-                "newyorkknicks", "oklahomacitythunder", "orlandomagic",   "philadelphia76ers",
-                "phoenixsuns", "portlandtrailblazers", "sacramentokings", "sanantoniospurs",
-                "torontoraptors",  "utahjazz", "washingtonwizards" };
-
-
-        //List<Game> whatevs = getDataRestAdapter.getTodaysGames();
-        //Log.i("whatves", whatevs);
-
-
-        //String todaysGamesURL = "http://192.168.1.81/todaysGames";
-        //String todaysGamesURL = "http://127.0.0.1/todaysGames";
-        //String todaysGamesURL = "https://api.github.com/users/cgudea";
-
-
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todays_games);
 
-        RecyclerView rv = (RecyclerView)findViewById(R.id.recycler_view);
+        RecyclerView rv = (RecyclerView) findViewById(R.id.recycler_view);
 //        rv.setHasFixedSize(true);
 
         // Look this up, Dustin
@@ -55,9 +36,9 @@ public class TodaysGamesView extends AppCompatActivity {
         rv.setLayoutManager(llm);
 
         GetDataRestAdapter.getNnbaApi().getTodaysGames()
-                .map(gamesList-> {
+                .map(gamesList -> {
                     Log.i("Dustin", "Shiv");
-                    for (Game game : gamesList){
+                    for (Game game : gamesList) {
                         game.setGameIds();
                     }
                     return gamesList;
@@ -70,32 +51,11 @@ public class TodaysGamesView extends AppCompatActivity {
                     rv.setAdapter(adapter);
                 });
 
-
-
+        getSupportActionBar().setTitle("NNBA");
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.nnba_logo);
 
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_todays_games_view, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
 
 }
