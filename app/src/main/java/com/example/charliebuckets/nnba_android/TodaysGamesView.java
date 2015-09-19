@@ -51,10 +51,10 @@ public class TodaysGamesView extends AppCompatActivity {
                     rv.setAdapter(adapter);
                 });
 
-        getSupportActionBar().setTitle("NNBA");
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.nnba_logo);
+        getSupportActionBar().setTitle("February 25, 2015");
+//        getSupportActionBar().setHomeButtonEnabled(true);
+//        getSupportActionBar().setDisplayShowHomeEnabled(true);
+//        getSupportActionBar().setIcon(R.drawable.nnba_logo);
 
     }
 

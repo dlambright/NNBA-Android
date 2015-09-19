@@ -1,6 +1,7 @@
 package com.example.charliebuckets.nnba_android;
 
 import android.graphics.Color;
+import android.util.Log;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -130,7 +131,12 @@ public class Constants {
         int home = primaryColors.get(homeTeam.toLowerCase());
         int away = primaryColors.get(awayTeam.toLowerCase());
 
-        if(getDistanceFromColors(home, away) < 35){
+        if(homeTeam.toLowerCase() == "minnesotatimberwolves")
+        {
+            Log.i("dustin", "dustin");
+        }
+
+        if(getDistanceFromColors(home, away) < 55){
             return secondaryColors.get(awayTeam.toLowerCase());
         }
 
