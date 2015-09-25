@@ -131,12 +131,12 @@ public class Constants {
         int home = primaryColors.get(homeTeam.toLowerCase());
         int away = primaryColors.get(awayTeam.toLowerCase());
 
-        if(homeTeam.toLowerCase() == "minnesotatimberwolves")
+        if(homeTeam.toLowerCase() == "torontoraptors")
         {
             Log.i("dustin", "dustin");
         }
 
-        if(getDistanceFromColors(home, away) < 55){
+        if(getDistanceFromColors(home, away) < 80){
             return secondaryColors.get(awayTeam.toLowerCase());
         }
 
@@ -152,9 +152,7 @@ public class Constants {
         int awayGreen = (awayTeamInt>>8)&0xFF;
         int awayRed = (awayTeamInt>>16)&0xFF;
 
-        double yoyo =  Math.sqrt((Math.pow((homeBlue - awayBlue), 2) + Math.pow((homeGreen - awayGreen), 2) + Math.pow((homeRed - awayRed), 2)));
-
-        return yoyo;
+        return  Math.sqrt((Math.pow((homeBlue - awayBlue), 2) + Math.pow((homeGreen - awayGreen), 2) + Math.pow((homeRed - awayRed), 2)));
 
     }
 
