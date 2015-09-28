@@ -3,6 +3,8 @@ package com.example.charliebuckets.nnba_android;
 import android.graphics.Color;
 import android.util.Log;
 
+
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,7 +15,7 @@ import java.util.Map;
  */
 public class Constants {
 
-
+// A table to take the full name, and return the nickname
     private static final Map<String, String> teamNameTable = Collections.unmodifiableMap(
             new HashMap<String, String>() {{
                 put("atlantahawks","Hawks");
@@ -47,10 +49,14 @@ public class Constants {
                 put("utahjazz", "Jazz");
                 put("washingtonwizards", "Wizards");
             }});
+
+// Wrapper method to get the team nickname
     public static String getTeamNameFromFullName(String fullName){
         return teamNameTable.get(fullName);
     }
 
+// Table of team colors.  Every home team will have their primary color shown.
+// If the away team is too close to the home team, the secondary color will be shown.
     public static final Map<String, Integer> primaryColors = Collections.unmodifiableMap(
             new HashMap<String, Integer>() {
                 {
@@ -86,7 +92,7 @@ public class Constants {
                     put("washingtonwizards",  Color.rgb( 0 ,  43 ,  92));
                 }});
 
-
+//  The huge list of secondary colors
     public static final Map<String, Integer> secondaryColors = Collections.unmodifiableMap(
             new HashMap<String, Integer>() {
                 {
@@ -122,10 +128,12 @@ public class Constants {
                     put("washingtonwizards", Color.rgb(227, 24, 55));
                 }});
 
+// Wrapper method to get the home team color
     public static int getHomeTeamColor(String homeTeam){
         return primaryColors.get(homeTeam.toLowerCase());
    }
 
+// if the colors are too close, this method returns the secondary color for the away team
     public static int getAwayTeamColor(String homeTeam, String awayTeam){
 
         int home = primaryColors.get(homeTeam.toLowerCase());
@@ -139,6 +147,8 @@ public class Constants {
         return primaryColors.get(awayTeam.toLowerCase());
     }
 
+// calculates the distance in 3D space between two colors based on the rgb values.  If the two colors are
+// within 80, the secondary color is selected.
     public static double getDistanceFromColors(int homeTeamInt, int awayTeamInt){
         int homeBlue = (homeTeamInt)&0xFF;
         int homeGreen = (homeTeamInt>>8)&0xFF;
@@ -151,7 +161,7 @@ public class Constants {
         return  Math.sqrt((Math.pow((homeBlue - awayBlue), 2) + Math.pow((homeGreen - awayGreen), 2) + Math.pow((homeRed - awayRed), 2)));
 
     }
-
+// Gets the drawable from the archive based off of a string from a file
     public static int getDrawableFromString(String teamName){
         switch (teamName){
             case "atlantahawks":

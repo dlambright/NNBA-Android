@@ -29,9 +29,7 @@ public class TodaysGamesView extends AppCompatActivity {
         setContentView(R.layout.activity_todays_games);
 
         RecyclerView rv = (RecyclerView) findViewById(R.id.recycler_view);
-//        rv.setHasFixedSize(true);
 
-        // Look this up, Dustin
         LinearLayoutManager llm = new LinearLayoutManager(this);
         rv.setLayoutManager(llm);
 
@@ -52,10 +50,6 @@ public class TodaysGamesView extends AppCompatActivity {
                 });
 
         getSupportActionBar().setTitle("February 25, 2015");
-//        getSupportActionBar().setHomeButtonEnabled(true);
-//        getSupportActionBar().setDisplayShowHomeEnabled(true);
-//        getSupportActionBar().setIcon(R.drawable.nnba_logo);
-
     }
 
 }

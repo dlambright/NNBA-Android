@@ -8,8 +8,8 @@ public class Game {
     public String awayTeam;
     public String homeTeamScore;
     public String awayTeamScore;
-    public int homeTeamId; //intFix
-    public int awayTeamId; //intFix
+    public int homeTeamId;
+    public int awayTeamId;
     public String time;
     public String gameId;
 

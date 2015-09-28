@@ -25,6 +25,7 @@ import rx.android.schedulers.AndroidSchedulers;
 public class CurrentGameActivity extends AppCompatActivity {
     DecimalFormat df = new DecimalFormat("#.#%");
 
+// Activity variables
     private ImageView homeTeamImage;
     private ImageView awayTeamImage;
     private String homeTeamString;
@@ -78,10 +79,9 @@ public class CurrentGameActivity extends AppCompatActivity {
 
         initializeViews();
 
-
+// RxJava call to populate home team stats
         NetworkUtility.getTeamStats(baseUrl + homeTeamString)
                 .observeOn(AndroidSchedulers.mainThread())
-//                .toList()
                 .subscribe(statsList -> {
                     homeTeamStats = statsList;
                     txtHomeWinProbability.setText(df.format(Float.parseFloat(homeTeamStats[homeTeamStats.length - 2])));
@@ -101,9 +101,9 @@ public class CurrentGameActivity extends AppCompatActivity {
                     txtHomeTSP.setText(df.format(Float.parseFloat(homeTeamStats[homeTeamStats.length - 3])));
                 });
 
+// RxJava call to populate away team stats
         NetworkUtility.getTeamStats(baseUrl + awayTeamString)
                 .observeOn(AndroidSchedulers.mainThread())
-//                .toList()
                 .subscribe(statsList -> {
                     awayTeamStats = statsList;
                     txtAwayWinProbability.setText(df.format(Float.parseFloat(awayTeamStats[awayTeamStats.length - 2])));
@@ -123,14 +123,9 @@ public class CurrentGameActivity extends AppCompatActivity {
                     txtAwayTSP.setText(df.format(Float.parseFloat(awayTeamStats[awayTeamStats.length - 3])));
                 });
 
-        //initializeViews();
-
-
-
-
     }
 
-
+// Attach the variables to acitvity views
     private void initializeViews(){
         homeTeamString = getIntent().getStringExtra("homeTeamName");
         awayTeamString = getIntent().getStringExtra("awayTeamName");
@@ -169,9 +164,6 @@ public class CurrentGameActivity extends AppCompatActivity {
         txtChartHeader = (TextView) findViewById(R.id.txtTableHeader);
         lineChartView = (LineChartView) findViewById(R.id.chart);
 
-
-//        txtHomeTeamColor.setBackgroundTintList(ColorStateList.valueOf(Constants.getHomeTeamColor(homeTeamString)));
-
         txtHomeTeamColor.setText(Constants.getTeamNameFromFullName(homeTeamString.toLowerCase()).toUpperCase());
         txtAwayTeamColor.setText(Constants.getTeamNameFromFullName(awayTeamString.toLowerCase()).toUpperCase());
         txtHomeTeamColor.setBackgroundColor(Constants.getHomeTeamColor(homeTeamString));
@@ -182,8 +174,7 @@ public class CurrentGameActivity extends AppCompatActivity {
 
     }
 
-
-    //Check this method
+// if the stats are present, change the chart data based on the tap
     public void onClick (View v){
         if (homeTeamStats != null && awayTeamStats != null) {
             TextView tv = (TextView) v;
@@ -193,6 +184,7 @@ public class CurrentGameActivity extends AppCompatActivity {
         }
     }
 
+// Used to get the index of the data to parse
     private int getTableValuesFromView(View v) {
         switch (v.getId()) {
             case R.id.winPctMiddle:
@@ -238,6 +230,7 @@ public class CurrentGameActivity extends AppCompatActivity {
         return listToReturn;
     }
 
+// Graph needs floatpoints to populate the graph
     private ArrayList<PointValue> getFloatPointsFromString(int index, String[] string){
         int statsLineLength = 38;
         ArrayList<PointValue> listToReturn = new ArrayList<>();
@@ -249,6 +242,7 @@ public class CurrentGameActivity extends AppCompatActivity {
         return listToReturn;
     }
 
+// Takes the read in data to populate the graph
     private void setChartData(int index){
         List<Line> lines = new ArrayList<Line>();
         ArrayList<PointValue> homeValues;
