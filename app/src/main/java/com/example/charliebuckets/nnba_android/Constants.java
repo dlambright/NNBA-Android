@@ -130,11 +130,7 @@ public class Constants {
 
         int home = primaryColors.get(homeTeam.toLowerCase());
         int away = primaryColors.get(awayTeam.toLowerCase());
-
-        if(homeTeam.toLowerCase() == "torontoraptors")
-        {
-            Log.i("dustin", "dustin");
-        }
+        
 
         if(getDistanceFromColors(home, away) < 80){
             return secondaryColors.get(awayTeam.toLowerCase());
